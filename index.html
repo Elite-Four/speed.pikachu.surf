@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speedmon</title>
+  <link rel="stylesheet" href="//unpkg.com/bulma">
+</head>
+<body>
+  <main class="container">
+    <div class="section columns is-multiline">
+      <speedmon-calculator v-for="index in calculatorsCount" :key="index"></speedmon-calculator>
+      <button class="section column is-half notification" @click="calculatorsCount += 1">+</button>
+    </div>
+  </main>
+  <script type="text/html" id="calculator">
+    <section class="column is-half">
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">Level</button>
+        </div>
+        <div class="control is-expanded">
+          <input class="input"
+            type="number" min="1" max="100"
+            v-model.number="level">
+        </div>
+        <div class="control">
+          <div class="buttons has-addons">
+            <button class="button" @click="level = 1">1</button>
+            <button class="button" @click="level = 50">50</button>
+            <button class="button" @click="level = 100">100</button>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">Base</button>
+        </div>
+        <div class="control is-expanded">
+          <input class="input"
+            type="number" min="5" max="255"
+            v-model.number="base">
+        </div>
+        <div class="control">
+          <div class="buttons has-addons">
+            <button class="button" @click="base = 61">61</button>
+            <button class="button" @click="base = 100">100</button>
+            <button class="button" @click="base = 142">142</button>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">IV</button>
+        </div>
+        <div class="control is-expanded">
+          <input class="input"
+            type="number" min="0" max="31"
+            v-model.number="individual">
+        </div>
+        <div class="control">
+          <div class="buttons has-addons">
+            <button class="button" @click="individual = 0">0</button>
+            <button class="button" @click="individual = 31">31</button>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">EV</button>
+        </div>
+        <div class="control is-expanded">
+          <input class="input"
+            type="number" min="0" max="252"
+            v-model.number="effort">
+        </div>
+        <div class="control">
+          <div class="buttons has-addons">
+            <button class="button" @click="effort = 0">0</button>
+            <button class="button" @click="effort = 252">252</button>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">Nature</button>
+        </div>
+        <div class="control is-expanded">
+          <div class="select is-fullwidth">
+            <select v-model.number="nature">
+              <option value="1">x1.1</option>
+              <option value="0">x1</option>
+              <option value="-1">x0.9</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">Boost</button>
+        </div>
+        <div class="control is-expanded">
+          <div class="select is-fullwidth">
+            <select v-model.number="boost">
+              <option value="6">+6 (x4)</option>
+              <option value="5">+5 (x3.5)</option>
+              <option value="4">+4 (x3)</option>
+              <option value="3">+3 (x2.5)</option>
+              <option value="2">+2 (x2)</option>
+              <option value="1">+1 (x1.5)</option>
+              <option value="0">0</option>
+              <option value="-1">-1 (/1.5)</option>
+              <option value="-2">-2 (/2)</option>
+              <option value="-3">-3 (/2.5)</option>
+              <option value="-4">-4 (/3)</option>
+              <option value="-5">-5 (/3.5)</option>
+              <option value="-6">-6 (/4)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field has-addons">
+        <div class="control">
+          <button class="button is-static">Speed</button>
+        </div>
+        <div class="control is-expanded">
+          <input class="input"
+            type="number" readonly
+            :value="speed">
+        </div>
+      </div>
+    </section>
+  </script>
+  <script src="//unpkg.com/vue"></script>
+  <script src="app.js"></script>
+</body>
+</html>
