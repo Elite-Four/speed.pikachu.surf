@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Speedmon</title>
   <link rel="stylesheet" href="//unpkg.com/bulma">
+  <style>[v-cloak]{ display: none; }</style>
 </head>
 <body>
   <header class="hero">
@@ -15,7 +16,7 @@
       </div>
     </div>
   </header>
-  <main class="container">
+  <main class="container" v-cloak>
     <div class="section columns is-multiline">
       <speedmon-calculator v-for="index in calculatorsCount" :key="index"></speedmon-calculator>
       <section class="column is-half">
@@ -47,7 +48,6 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="level = 1">1</button>
               <button class="button" @click="level = 50">50</button>
               <button class="button" @click="level = 100">100</button>
             </div>
@@ -64,7 +64,6 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="base = 61">61</button>
               <button class="button" @click="base = 100">100</button>
               <button class="button" @click="base = 142">142</button>
             </div>
