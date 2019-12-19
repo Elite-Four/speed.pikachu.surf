@@ -26,10 +26,9 @@ void function () {
     }
   })
   new Vue({
-    el: 'main',
     data: {
       calculatorsCount: 2
     },
     components: { SpeedmonCalculator }
-  })
+  }).$mount('main')
 } ()
