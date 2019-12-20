@@ -21,7 +21,7 @@
       <speedmon-calculator v-for="index in calculatorsCount" :key="index"></speedmon-calculator>
       <section class="column is-half">
         <div class="notification">
-          <button class="button is-fullwidth" @click="calculatorsCount += 1">+</button>
+          <button class="button is-fullwidth" type="button" @click="calculatorsCount += 1">+</button>
         </div>
       </section>
     </div>
@@ -39,7 +39,7 @@
       <form class="notification">
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">Level</button>
+            <button class="button is-static" type="button">Level</button>
           </div>
           <div class="control is-expanded">
             <input class="input"
@@ -48,14 +48,14 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="level = 50">50</button>
-              <button class="button" @click="level = 100">100</button>
+              <button class="button" type="button" @click="level = 50">50</button>
+              <button class="button" type="button" @click="level = 100">100</button>
             </div>
           </div>
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">Base</button>
+            <button class="button is-static" type="button">Base</button>
           </div>
           <div class="control is-expanded">
             <input class="input"
@@ -64,14 +64,14 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="base = 100">100</button>
-              <button class="button" @click="base = 142">142</button>
+              <button class="button" type="button" @click="base = 100">100</button>
+              <button class="button" type="button" @click="base = 142">142</button>
             </div>
           </div>
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">IV</button>
+            <button class="button is-static" type="button">IV</button>
           </div>
           <div class="control is-expanded">
             <input class="input"
@@ -80,14 +80,14 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="individual = 0">0</button>
-              <button class="button" @click="individual = 31">31</button>
+              <button class="button" type="button" @click="individual = 0">0</button>
+              <button class="button" type="button" @click="individual = 31">31</button>
             </div>
           </div>
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">EV</button>
+            <button class="button is-static" type="button">EV</button>
           </div>
           <div class="control is-expanded">
             <input class="input"
@@ -96,14 +96,14 @@
           </div>
           <div class="control">
             <div class="buttons has-addons">
-              <button class="button" @click="effort = 0">0</button>
-              <button class="button" @click="effort = 252">252</button>
+              <button class="button" type="button" @click="effort = 0">0</button>
+              <button class="button" type="button" @click="effort = 252">252</button>
             </div>
           </div>
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">Nature</button>
+            <button class="button is-static" type="button">Nature</button>
           </div>
           <div class="control is-expanded">
             <div class="select is-fullwidth">
@@ -117,7 +117,7 @@
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">Boost</button>
+            <button class="button is-static" type="button">Boost</button>
           </div>
           <div class="control is-expanded">
             <div class="select is-fullwidth">
@@ -141,7 +141,7 @@
         </div>
         <div class="field has-addons">
           <div class="control">
-            <button class="button is-static">Speed</button>
+            <button class="button is-static" type="button">Speed</button>
           </div>
           <div class="control is-expanded">
             <input class="input" type="number" readonly :value="speed">
